@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>2.shell</title>
+        <style>
+                body,section{margin: 0; padding: 0; background: black;}
+                .s1{width: 100vw; height: 100vh; overflow: hidden; background-image: url('test.jpg'); background-size: cover;filter: grayscale(80%);
+                        animation: test 20s;}
+                        @keyframes test{from{ transform: scale(1.3);opacity: 30%;}
+                                to{ transform: scale(1.0);opacity: 100%}}
+
+                #grp{background: black; width: 100vw; height: 100vh; overflow: none; filter: blur(5px); mix-blend-mode: multiply; transform: scale(1.1);}
+                .circle{background: white; width: 200px;
+                        height: 200px; border-radius: 50%;
+                        position: absolute;
+                        transform: translate(-50%,-50%);
+                        background-clip: border-box;}
+                }
+        </style>
+</head>
+<body>
+        <section class="s1">
+        <section id="grp"></section>
+        </section>
+        <script type="text/javascript">
+
+
+        window.onmousemove = function(e){
+                let a = document.createElement("div");
+                a.className = "circle";
+                a.style.width = 250 + e.timeStamp/1000 + "px";
+                a.style.height = 250 + e.timeStamp/1000 + "px";
+                a.style.left = e.clientX + "px";
+                a.style.top = e.clientY + "px";
+                grp.appendChild(a);
+               
+                
+        }
+
+
+        </script>
+        
+</body>
+</html>
